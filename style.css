@@ -1,0 +1,148 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    
+    background: #19e8ff;
+    color: black;
+    background-color: white;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 5cm;
+    border-radius: 25px;
+    box-shadow: black; 0px 2px 20px 0px;
+}
+
+.toggle-container{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.toggle{
+    display:flex;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.slide{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: #088178;
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.label{
+    flex: 1;
+    text-align: center;
+    color: #black;
+    font-weight: bold;
+    z-index: 9;
+}
+
+#toggle{
+    display: none;
+}
+
+#toggle:checked+.toggle .slide{
+    transform:translateX(100%);
+}
+
+label{
+    width: 250px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.hidden{
+    display: none;
+}
+
+.form-container{
+    width: 100%;
+    overflow: hidden;
+}
+
+input{
+    width: 95%;
+    padding: 5px 3px;
+    font-size: 15px;
+    margin: 5px 0px;
+}
+
+input:focus{
+    border: 1px solid black;
+    outline: 1px solid black;
+}
+
+button{
+    width: 100%;
+    padding: 9px;
+    margin: 20px 0px 0px 0px;
+    background: #088178;
+    border: none;
+    font-size: 16px;
+    font-weight: medium;
+    cursor: pointer;
+    border-radius: 25px;
+}
+#hro {
+    
+    height: 540px;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+
+}
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navbar li {
+    list-style: none;
+    padding: 5px 20px;
+}
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3 ease;
+}
+#navbar li a:hover {
+    color: #088178;
+}
+ footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+    }
+    footer table {
+        margin: auto;
+    }
+    footer th, footer td {
+        padding: 5px 10px;
+    }

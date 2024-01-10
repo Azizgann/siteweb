@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Sign Up Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="header">
+    
+    <div>
+        <ol id="navbar"> 
+            <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                    <li><a href="login.html">Login</a></li>
+                  </ol>
+                   
+</section>
+  <section id="hro">
+  <div class="container">
+    <div class="toggle-container">
+      <input type="checkbox" id="toggle" class="hidden">
+      <label for="toggle" class="toggle">
+        <div class="slide"></div>
+         <span class="label">Login</span>
+         <span class="label">Sign Up</span>
+      </label>
+    </div>
+
+   <div class="form-container">
+      <form action="" id="login-form">
+        <label for="login-email">Email</label><br>
+        <input type="email" id="login-email"><br><br>
+        <label for="login-password">Password</label><br>
+        <input type="password" id="login-password"><br><br>
+        <button type="submit">Login</button>
+      </form>
+      <form action="" id="signup-form" class="hidden">
+        <label for="signup-name">Name</label><br>
+        <input type="text" id="signup-name"><br><br>
+        <label for="signup-email">Email</label><br>
+        <input type="email" id="signup-email"><br><br>
+        <label for="signup-password">Password</label><br>
+        <input type="password" id="signup-password"><br><br>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</section>
+<footer>
+    <table>
+        <tr>
+            <th>Contactez-nous</th>
+        </tr>
+        <tr>
+            <td>Email :</td>
+            <td>MAG@example.com</td>
+        </tr>
+        <tr>
+            <td>Téléphone :</td>
+            <td>99-456-000</td>
+        </tr>
+    </table>
+    <p>&copy; 2024 Aziz Gannouni. Tous droits réservés.</p>
+</footer>
+
+  <script>
+    document.getElementById('toggle').addEventListener('change', function(){
+    const loginForm=document.getElementById('login-form');
+    const signupForm=document.getElementById('signup-form');
+
+
+    if(this.checked){
+        loginForm.classList.add('hidden');
+        signupForm.classList.remove('hidden');
+    }
+    else{
+        loginForm.classList.remove('hidden');
+        signupForm.classList.add('hidden');
+    }
+});
+    
+
+document.getElementById('login-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  const emailLogin = document.getElementById('login-email').value;
+  const passwordLogin = document.getElementById('login-password').value;
+
+  
+  if (emailLogin.trim() === '' || passwordLogin.trim() === '') {
+    document.write('Veuillez entrer des informations  pour la connexion.');
+    return;
+  }
+
+  const emailSignup = document.getElementById('signup-email').value;
+  const passwordSignup = document.getElementById('signup-password').value;
+
+  
+  if (emailLogin === emailSignup && passwordLogin === passwordSignup) {
+    
+    window.location.href = 'file:///C:/Users/AZIZ/Desktop/projetweb/index.html';
+    
+  } else {
+    alert('L\'email ou le mot de passe est incorrect.');
+  }
+});
+
+document.getElementById('signup-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('signup-name').value;
+  const email = document.getElementById('signup-email').value;
+  const password = document.getElementById('signup-password').value;
+
+  
+  if (name.trim() === '' || email.trim() === '' || !isValidEmail(email) || password.trim() === '') {
+    alert('Veuillez remplir tous les champs avec des informations valides.');
+
+    return;
+  }
+
+  
+  console.log('Name (Signup):', name);
+  console.log('Email (Signup):', email);
+  console.log('Password (Signup):', password);
+});
+
+
+function isValidEmail(email) {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+}
+
+
+  </script>
+</body>
+</html>
